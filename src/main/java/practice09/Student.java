@@ -22,6 +22,9 @@ public class Student extends  Person{
         if (!this.equals(klass.getLeader())) {
             introduceString += MessageFormat.format("I am at {0}.", klass.getDisplayName());
 
+        }else {
+
+            introduceString += MessageFormat.format("I am Leader of {0}.", klass.getDisplayName());
         }
         return introduceString;
     }
