@@ -8,6 +8,9 @@ public class Teacher extends Person {
 
     private Klass klass;
     private LinkedList<Klass> linkedList;
+    public Teacher(int id, String name, int age) {
+        super(id, name, age);
+    }
 
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
@@ -44,16 +47,21 @@ public class Teacher extends Person {
     public String introduce() {
         StringBuilder introduce = new StringBuilder(super.introduce() + " I am a Teacher. ");
 
-        introduce.append("I teach Class ");
-        for (Klass klass : linkedList) {
-            int i;
-            introduce.append(klass.getNumber());
-            if (klass != linkedList.getLast()) {
-                introduce.append(", ");
+        if(linkedList!=null) {
+            introduce.append("I teach Class ");
+            for (Klass klass : linkedList) {
+                int i;
+                introduce.append(klass.getNumber());
+                if (klass != linkedList.getLast()) {
+                    introduce.append(", ");
+                }
             }
-        }
 
-        introduce.append(".");
+            introduce.append(".");
+        }
+        else{
+            introduce.append("I teach No Class.");
+        }
 
         return introduce.toString();
     }
