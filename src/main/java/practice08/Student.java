@@ -22,11 +22,11 @@ public class Student extends Person{
         String introduceString = MessageFormat.format("{0} I am a Student. ", super.introduce());
         if (!this.equals(klass.getLeader())) {
             introduceString += MessageFormat.format("I am at {0}.", klass.getDisplayName());
+
+        } else {
+
+            introduceString += MessageFormat.format("I am Leader of {0}.", klass.getDisplayName());
         }
-//        } else {
-//
-//            introduceString += MessageFormat.format("I am Leader of {0}.", klass.getDisplayName());
-//        }
         return introduceString;
     }
 }
