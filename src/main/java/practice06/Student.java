@@ -15,5 +15,11 @@ public class Student extends Person {
                 "{0} I am a Student. I am at Class {1}.", super.introduce(), klass);
     }
 
+    public Klass getKlass() {
+        return klass;
+    }
 
+    public void setKlass(Klass klass) {
+        this.klass = klass;
+    }
 }
