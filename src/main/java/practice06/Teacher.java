@@ -35,7 +35,14 @@ public class Teacher extends Person {
 
     public String introduceWith(Student student){
 
-        return MessageFormat.format("{0} I am a Teacher. I teach {1}.",super.introduce(), student.getName());
+        String introduceString= MessageFormat.format("{0} I am a Teacher. I ",super.introduce());
+        if(klass.getNumber() == student.getKlass().getNumber()){
+            introduceString+=MessageFormat.format("teach {0}.", student.getName());
+        }
+        else{
+            introduceString+="don't teach "+ student.getName()+".";
+        }
+        return  introduceString;
 
     }
 }
