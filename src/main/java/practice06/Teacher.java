@@ -9,6 +9,9 @@ public class Teacher extends Person {
         super(name, age);
         this.klass = klass;
     }
+    public Teacher(String name, int age) {
+        super(name, age);
+    }
 
     public Klass getKlass() {
         return klass;
@@ -19,9 +22,15 @@ public class Teacher extends Person {
     }
 
     public String introduce() {
-        return MessageFormat.format("{0} I am a Teacher. I teach {1}."
-                , super.introduce(),
-                klass.getDisplayName());
+        String introduce = super.introduce() + " I am a Teacher. ";
+
+        if (klass!= null) {
+            introduce += " I teach " + klass.getDisplayName() + ".";
+        } else {
+            introduce += "I teach No Class.";
+        }
+
+        return introduce;
     }
 
 }
