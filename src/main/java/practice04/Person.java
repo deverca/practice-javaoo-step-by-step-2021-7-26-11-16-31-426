@@ -25,4 +25,10 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public String introduce() {
+        return "My name is " + name + ". I am " + age + " years old.";
+    }
+
+
 }
