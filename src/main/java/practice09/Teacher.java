@@ -82,6 +82,9 @@ public class Teacher extends Person {
         if(!newLinked.isEmpty()){
             introduceString += MessageFormat.format("teach {0}.", student.getName());
         }
+        else{
+            introduceString+="don't teach "+ student.getName()+".";
+        }
 
         return introduceString;
 
