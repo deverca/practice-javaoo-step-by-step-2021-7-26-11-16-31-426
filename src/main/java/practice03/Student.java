@@ -17,7 +17,7 @@ public class Student extends Person {
         return "I am a Student. I am at Class " + klass + ".";
 
     }
-    
+
 
     public Student(String name, int age, int klass) {
         super(name, age);
