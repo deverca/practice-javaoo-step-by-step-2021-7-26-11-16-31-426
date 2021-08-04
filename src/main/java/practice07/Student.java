@@ -2,7 +2,6 @@ package practice07;
 
 
 import java.text.MessageFormat;
-import java.util.Collection;
 
 public class Student extends Person {
     private Klass klass;
