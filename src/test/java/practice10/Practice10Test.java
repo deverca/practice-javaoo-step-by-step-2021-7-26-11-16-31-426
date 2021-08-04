@@ -64,22 +64,22 @@ public class Practice10Test {
         return outContent.toString();
     }
 
-//    @Test
-//    public void should_class_assign_a_member_student_as_leader() throws Exception {
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
-//        klass.appendMember(jerry);
-//        klass.assignLeader(jerry);
-//        assertThat(klass.getLeader()).isEqualTo(jerry);
-//    }
-//
-//    @Test
-//    public void should_student_have_name_age_and_class_number() throws Exception {
-//        Student tom = new Student(1, "Tom", 21, klass);
-//        assertThat(tom.getName()).isEqualTo("Tom");
-//        assertThat(tom.getAge()).isEqualTo(21);
-//        assertThat(tom.getKlass()).isEqualTo(klass);
-//    }
-//
+    @Test
+    public void should_class_assign_a_member_student_as_leader() throws Exception {
+        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
+        klass.appendMember(jerry);
+        klass.assignLeader(jerry);
+        assertThat(klass.getLeader()).isEqualTo(jerry);
+    }
+
+    @Test
+    public void should_student_have_name_age_and_class_number() throws Exception {
+        Student tom = new Student(1, "Tom", 21, klass);
+        assertThat(tom.getName()).isEqualTo("Tom");
+        assertThat(tom.getAge()).isEqualTo(21);
+        assertThat(tom.getKlass()).isEqualTo(klass);
+    }
+
 //    @Test
 //    public void should_student_introduce_with_class() throws Exception {
 //        Student tom = new Student(1, "Tom", 21, klass);
