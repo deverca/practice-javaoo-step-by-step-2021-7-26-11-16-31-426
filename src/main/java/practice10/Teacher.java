@@ -1,5 +1,6 @@
 package practice10;
 
+
 import java.util.LinkedList;
 
 public class Teacher extends Person {
@@ -41,6 +42,9 @@ public class Teacher extends Person {
         }
 
         return introduce.toString();
+    }
+    public boolean isTeaching(Student student) {
+        return linkedList.contains(student.getKlass());
     }
 
     public LinkedList<Klass> getClasses() {
