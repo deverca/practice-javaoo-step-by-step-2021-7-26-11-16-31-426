@@ -2,6 +2,7 @@ package practice09;
 
 
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person {
 
@@ -38,5 +39,22 @@ public class Teacher extends Person {
 
     public LinkedList<Klass> getClasses() {
         return linkedList;
+    }
+
+    public String introduce() {
+        StringBuilder introduce = new StringBuilder(super.introduce() + " I am a Teacher. ");
+
+        introduce.append("I teach Class ");
+        for (Klass klass : linkedList) {
+            int i;
+            introduce.append(klass.getNumber());
+            if (klass != linkedList.getLast()) {
+                introduce.append(", ");
+            }
+        }
+
+        introduce.append(".");
+
+        return introduce.toString();
     }
 }
