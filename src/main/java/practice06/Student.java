@@ -12,7 +12,7 @@ public class Student extends Person {
 
     public String introduce() {
         return MessageFormat.format(
-                "{0} I am a Student. I am at Class {1}.", super.introduce(), klass);
+                "{0} I am a Student. I am at {1}.", super.introduce(), klass.getDisplayName());
     }
 
     public Klass getKlass() {
