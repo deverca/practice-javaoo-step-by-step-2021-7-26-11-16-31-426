@@ -2,6 +2,9 @@ package practice07;
 
 public class Teacher extends Person {
     private Klass klass;
+    public Teacher(int id, String name, int age) {
+        super(id, name, age);
+    }
 
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
@@ -19,6 +22,14 @@ public class Teacher extends Person {
     }
 
     public String introduce() {
-        return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName()+".";
+        String introduce = super.introduce() + " I am a Teacher. ";
+
+        if (klass!= null) {
+            introduce += " I teach " + klass.getDisplayName() + ".";
+        } else {
+            introduce += "I teach No Class.";
+        }
+
+        return introduce;
     }
 }
