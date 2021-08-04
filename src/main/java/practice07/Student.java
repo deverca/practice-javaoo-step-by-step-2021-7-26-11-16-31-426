@@ -2,6 +2,7 @@ package practice07;
 
 
 import java.text.MessageFormat;
+import java.util.Collection;
 
 public class Student extends Person {
     private Klass klass;
@@ -18,8 +19,16 @@ public class Student extends Person {
         super(id, name, age);
         this.klass = klass;
     }
+
     public String introduce() {
-        return MessageFormat.format(
-                "{0} I am a Student. I am at {1}.", super.introduce(), klass.getDisplayName());
+        String introduceString = MessageFormat.format("{0} I am a Student. ", super.introduce());
+        if (!klass.getLeader().equals(this)) {
+            introduceString += MessageFormat.format("I am at {0}.", klass.getDisplayName());
+        } else {
+
+            introduceString += MessageFormat.format("I am Leader of {0}.", klass.getDisplayName());
+        }
+        return introduceString;
     }
+
 }

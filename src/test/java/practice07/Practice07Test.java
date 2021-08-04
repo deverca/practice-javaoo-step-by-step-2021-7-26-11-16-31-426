@@ -20,13 +20,13 @@ public class Practice07Test {
         assertThat(person.getAge()).isEqualTo(21);
     }
 
-//    @Test
-//    public void should_person_with_same_id_be_same_one() throws Exception {
-//        Person person1 = new Person(1, "Tom", 21);
-//        Person person2 = new Person(1, "Tom", 21);
-//        assertThat(person1).isEqualTo(person2);
-//    }
-//
+    @Test
+    public void should_person_with_same_id_be_same_one() throws Exception {
+        Person person1 = new Person(1, "Tom", 21);
+        Person person2 = new Person(1, "Tom", 21);
+        assertThat(person1).isEqualTo(person2);
+    }
+
     @Test
     public void should_person_have_an_introduce_method_which_introduce_person_with_name_and_age() throws Exception {
         Person tom = new Person(1, "Tom", 21);
@@ -71,15 +71,15 @@ public class Practice07Test {
 //        klass.assignLeader(tom);
 //        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
 //    }
-//
-//    @Test
-//    public void should_teacher_have_name_and_age_and_class() throws Exception {
-//        Teacher tom = new Teacher(1, "Tom", 21, klass);
-//        assertThat(tom.getName()).isEqualTo("Tom");
-//        assertThat(tom.getAge()).isEqualTo(21);
-//        assertThat(tom.getKlass()).isEqualTo(klass);
-//    }
-//
+
+    @Test
+    public void should_teacher_have_name_and_age_and_class() throws Exception {
+        Teacher tom = new Teacher(1, "Tom", 21, klass);
+        assertThat(tom.getName()).isEqualTo("Tom");
+        assertThat(tom.getAge()).isEqualTo(21);
+        assertThat(tom.getKlass()).isEqualTo(klass);
+    }
+
 //    @Test
 //    public void should_teacher_introduce_itself_with_which_class_it_teaches() throws Exception {
 //        Teacher tom = new Teacher(1, "Tom", 21, klass);
