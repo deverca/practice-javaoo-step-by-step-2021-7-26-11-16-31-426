@@ -12,11 +12,11 @@ public class Practice08Test {
     private Klass klass;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
-//    @BeforeEach
-//    public void setup() {
-//        klass = new Klass(2);
-//        System.setOut(new PrintStream(outContent));
-//    }
+    @BeforeEach
+    public void setup() {
+        klass = new Klass(2);
+        System.setOut(new PrintStream(outContent));
+    }
 
     @Test
     public void should_person_have_id_name_and_age() throws Exception {
@@ -39,11 +39,11 @@ public class Practice08Test {
         assertThat(introduce).isEqualTo("My name is Tom. I am 21 years old.");
     }
 
-//    @Test
-//    public void should_class_have_a_number() throws Exception {
-//        assertThat(klass.getNumber()).isEqualTo(2);
-//    }
-//
+    @Test
+    public void should_class_have_a_number() throws Exception {
+        assertThat(klass.getNumber()).isEqualTo(2);
+    }
+
 //    @Test
 //    public void should_class_get_display_name() throws Exception {
 //        assertThat(klass.getDisplayName()).isEqualTo("Class 2");
