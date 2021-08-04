@@ -4,6 +4,13 @@ public class Person {
     private String name;
     private int age;
 
+
+    public String introduce() {
+
+        return "My name is " + name + ". I am " + age + " years old.";
+    }
+
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
