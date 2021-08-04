@@ -37,6 +37,8 @@ public class Teacher extends Person{
         String introduceString= MessageFormat.format("{0} I am a Teacher. I ",super.introduce());
         if(klass.getNumber() == student.getKlass().getNumber()){
             introduceString+=MessageFormat.format("teach {0}.", student.getName());
+        } else{
+            introduceString+="don't teach "+ student.getName()+".";
         }
 
         return  introduceString;
