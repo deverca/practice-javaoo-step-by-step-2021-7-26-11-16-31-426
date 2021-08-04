@@ -17,6 +17,24 @@ public class Teacher extends Person {
 
     }
 
+    public String introduce() {
+        StringBuilder introduce = new StringBuilder(super.introduce() + " I am a Teacher. ");
+
+        if (linkedList != null) {
+            introduce.append("I teach Class ");
+            for (Klass klass : linkedList) {
+                int i;
+                introduce.append(klass.getNumber());
+                if (klass != linkedList.getLast()) {
+                    introduce.append(", ");
+                }
+            }
+
+            introduce.append(".");
+        }
+
+        return introduce.toString();
+    }
 
     public LinkedList<Klass> getClasses() {
         return linkedList;
