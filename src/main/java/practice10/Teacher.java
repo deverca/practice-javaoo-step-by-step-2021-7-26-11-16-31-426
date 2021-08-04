@@ -6,10 +6,15 @@ public class Teacher extends Person {
     private Klass klass;
     private LinkedList<Klass> linkedList;
 
+    public Teacher(int id, String name, int age) {
+        super(id, name, age);
+    }
+
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
     }
+
     public Teacher(int id, String name, int age, LinkedList<Klass> linkedList) {
         super(id, name, age);
         this.klass = klass;
@@ -31,6 +36,8 @@ public class Teacher extends Person {
             }
 
             introduce.append(".");
+        } else {
+            introduce.append("I teach No Class.");
         }
 
         return introduce.toString();
