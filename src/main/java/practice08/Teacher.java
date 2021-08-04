@@ -1,6 +1,6 @@
 package practice08;
 
-import practice07.Student;
+
 
 import java.text.MessageFormat;
 
@@ -32,4 +32,14 @@ public class Teacher extends Person{
 
        return introduce;
    }
+    public String introduceWith(Student student){
+
+        String introduceString= MessageFormat.format("{0} I am a Teacher. I ",super.introduce());
+        if(klass.getNumber() == student.getKlass().getNumber()){
+            introduceString+=MessageFormat.format("teach {0}.", student.getName());
+        }
+
+        return  introduceString;
+
+    }
 }
