@@ -65,4 +65,12 @@ public class Teacher extends Person {
 
         return introduce.toString();
     }
+
+    public boolean isTeaching(Student student){
+        if(linkedList.contains(student.getKlass())){
+            return true;
+        }
+        return  false;
+    }
+
 }
