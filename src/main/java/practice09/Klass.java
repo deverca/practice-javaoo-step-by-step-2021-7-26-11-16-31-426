@@ -1,6 +1,7 @@
 package practice09;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Klass {
@@ -8,9 +9,11 @@ public class Klass {
     private Student leader;
     private List<Student> members;
 
+
     public Klass(int number) {
         this.number = number;
     }
+
 
     public int getNumber() {
         return number;
