@@ -1,13 +1,17 @@
 package practice09;
 
 
+import java.text.MessageFormat;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 public class Teacher extends Person {
 
     private Klass klass;
     private LinkedList<Klass> linkedList;
+
     public Teacher(int id, String name, int age) {
         super(id, name, age);
     }
@@ -47,7 +51,7 @@ public class Teacher extends Person {
     public String introduce() {
         StringBuilder introduce = new StringBuilder(super.introduce() + " I am a Teacher. ");
 
-        if(linkedList!=null) {
+        if (linkedList != null) {
             introduce.append("I teach Class ");
             for (Klass klass : linkedList) {
                 int i;
@@ -58,19 +62,29 @@ public class Teacher extends Person {
             }
 
             introduce.append(".");
-        }
-        else{
+        } else {
             introduce.append("I teach No Class.");
         }
 
         return introduce.toString();
     }
 
-    public boolean isTeaching(Student student){
-        if(linkedList.contains(student.getKlass())){
-            return true;
+    public boolean isTeaching(Student student) {
+        return linkedList.contains(student.getKlass());
+    }
+
+    public String introduceWith(Student student) {
+
+        List<Klass> newLinked = new LinkedList();
+        String introduceString = MessageFormat.format("{0} I am a Teacher. I ", super.introduce());
+        newLinked =linkedList.stream().filter(klass->klass.getNumber()==student.getKlass().getNumber()).collect(Collectors.toList());
+
+        if(!newLinked.isEmpty()){
+            introduceString += MessageFormat.format("teach {0}.", student.getName());
         }
-        return  false;
+
+        return introduceString;
+
     }
 
 }
