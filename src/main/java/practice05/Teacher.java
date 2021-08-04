@@ -1,5 +1,6 @@
 package practice05;
 
+
 import java.text.MessageFormat;
 
 public class Teacher extends Person {
@@ -19,8 +20,20 @@ public class Teacher extends Person {
         this.klass = klass;
     }
 
+    public Teacher(String name, int age) {
+        super(name, age);
+    }
+
     @Override
-    public String introduce(){
-        return MessageFormat.format("{0} I am a Teacher. I teach Class {1}.",super.introduce(),klass);
+    public String introduce() {
+        String introduce = super.introduce() + " I am a Teacher.";
+
+        if (klass != 0) {
+            introduce += " I teach Class " + klass + ".";
+        } else {
+            introduce += "I teach No Class.";
+        }
+
+        return introduce;
     }
 }
