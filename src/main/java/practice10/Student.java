@@ -27,5 +27,9 @@ public class Student extends Person {
         }
         return introduceString;
     }
+    public void transferKlass(Klass klass){
+
+
+    }
 
 }

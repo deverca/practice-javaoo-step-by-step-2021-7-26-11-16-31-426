@@ -48,7 +48,7 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
-    }
+    } //todo: remove setters
 
     public int getAge() {
         return age;

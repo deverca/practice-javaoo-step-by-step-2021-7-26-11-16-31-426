@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 
 public class Teacher extends Person {
     private Klass klass;
+
     public Teacher(int id, String name, int age) {
         super(id, name, age);
     }
@@ -27,7 +28,7 @@ public class Teacher extends Person {
     public String introduce() {
         String introduce = super.introduce() + " I am a Teacher. ";
 
-        if (klass!= null) {
+        if (klass != null) {
             introduce += "I teach " + klass.getDisplayName() + ".";
         } else {
             introduce += "I teach No Class.";
@@ -35,16 +36,16 @@ public class Teacher extends Person {
 
         return introduce;
     }
-    public String introduceWith(Student student){
 
-        String introduceString= MessageFormat.format("{0} I am a Teacher. I ",super.introduce());
-        if(klass.getNumber() == student.getKlass().getNumber()){
-            introduceString+=MessageFormat.format("teach {0}.", student.getName());
+    public String introduceWith(Student student) {
+
+        String introduceString = MessageFormat.format("{0} I am a Teacher. I ", super.introduce());
+        if (klass.getNumber() == student.getKlass().getNumber()) {
+            return introduceString += MessageFormat.format("teach {0}.", student.getName());
         }
-        else{
-            introduceString+="don't teach "+ student.getName()+".";
-        }
-        return  introduceString;
+
+        return introduceString += "don't teach " + student.getName() + ".";
+
 
     }
 }

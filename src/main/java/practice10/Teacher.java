@@ -17,14 +17,19 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
+
+
     }
 
-    public Teacher(int id, String name, int age, LinkedList<Klass> linkedList) {
+    public Teacher(int id, String name, int age, LinkedList<Klass> klasses) {
         super(id, name, age);
-        this.klass = klass;
-        this.linkedList = linkedList;
+        this.linkedList = klasses;
+        klasses.forEach(klass1-> klass1.addTeachers(this));
+
+
 
     }
+
 
     public String introduce() {
         StringBuilder introduce = new StringBuilder(super.introduce() + " I am a Teacher. ");
@@ -46,18 +51,22 @@ public class Teacher extends Person {
 
         return introduce.toString();
     }
+
     public String introduceWith(Student student) {
 
-        List<Klass> newLinked = new LinkedList();
+        List<Klass> newLinked;
         String introduceString = MessageFormat.format("{0} I am a Teacher. I ", super.introduce());
-        newLinked =linkedList.stream().filter(klass->klass.getNumber()==student.getKlass().getNumber()).collect(Collectors.toList());
+        newLinked = linkedList.stream().filter(klass -> klass.getNumber() == student.getKlass().getNumber()).collect(Collectors.toList());
 
-        if(!newLinked.isEmpty()){
+        if (!newLinked.isEmpty()) {
             introduceString += MessageFormat.format("teach {0}.", student.getName());
+        } else {
+            introduceString += "don't teach " + student.getName() + ".";
         }
         return introduceString;
 
     }
+
     public boolean isTeaching(Student student) {
         return linkedList.contains(student.getKlass());
     }
@@ -72,5 +81,12 @@ public class Teacher extends Person {
 
     public void setKlass(Klass klass) {
         this.klass = klass;
+    }
+    public void notifyStudentJoined(Klass klass, Student student){
+
+        System.out.printf("I am %s. I know %s has joined Class %d.\n", this.getName(), student.getName(),
+                klass.getNumber());
+
+
     }
 }
