@@ -17,16 +17,14 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
-
+        klass.addTeachers(this);
 
     }
 
     public Teacher(int id, String name, int age, LinkedList<Klass> klasses) {
         super(id, name, age);
         this.linkedList = klasses;
-        klasses.forEach(klass1-> klass1.addTeachers(this));
-
-
+        klasses.forEach(klass1 -> klass1.addTeachers(this));
 
     }
 
@@ -82,11 +80,17 @@ public class Teacher extends Person {
     public void setKlass(Klass klass) {
         this.klass = klass;
     }
-    public void notifyStudentJoined(Klass klass, Student student){
+
+    public void notifyStudentJoined(Klass klass, Student student) {
 
         System.out.printf("I am %s. I know %s has joined Class %d.\n", this.getName(), student.getName(),
                 klass.getNumber());
 
 
+    }
+
+    public void notifyAssignLeader(Klass klass, Student leader) {
+        System.out.printf("I am %s. I know %s become Leader of %s.\n", this.getName(),
+                leader.getName(), klass.getDisplayName());
     }
 }
